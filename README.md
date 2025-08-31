@@ -8,7 +8,7 @@ Uma aplicação web simples e bonita para contar partidas de Ping-Pong entre doi
 - ✅ **Botão de incremento (+)**: Adiciona vitórias rapidamente
 - ✅ **Alteração rápida de score**: Clique no número para alterar diretamente
 - ✅ **Frase dinâmica**: Mostra quem tem mais vitórias com uma mensagem personalizada
-- ✅ **Undo/Desfazer**: Reverte a última alteração de score (🔧 **Bug corrigido!**)
+- ✅ **Undo/Desfazer**: Reverte a última alteração de score
 - ✅ **Reset**: Zera o placar (com confirmação)
 - ✅ **Partilhar**: Partilha o resultado via sistema nativo ou copia para área de transferência
 - ✅ **LocalStorage**: Os dados ficam guardados localmente no navegador
