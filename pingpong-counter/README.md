@@ -39,7 +39,7 @@ Uma aplicação web simples e bonita para contar partidas de Ping-Pong entre doi
 ## 🔥 Firebase Setup
 
 Para ativar a sincronização em tempo real e links partilháveis:
-1. Siga as instruções em [`FIREBASE_SETUP.md`](FIREBASE_SETUP.md)
+1. Siga as instruções em [`docs/FIREBASE.md`](docs/FIREBASE.md)
 2. Configure seu projeto Firebase
 3. Atualize as configurações em `src/firebase.js`
 
@@ -149,3 +149,18 @@ pingpong-counter/
 ## 📄 Licença
 
 Este projeto é open source e está disponível sob a licença MIT.
+
+---
+
+## 📚 Documentação Completa
+
+Para informação detalhada sobre todas as funcionalidades:
+
+- **🚀 [Instalação e Setup](docs/SETUP.md)** - Guia completo de instalação
+- **🔥 [Configuração Firebase](docs/FIREBASE.md)** - Setup da sincronização cloud
+- **📱 [PWA e Instalação](docs/PWA.md)** - Progressive Web App
+- **📊 [Sistema de Histórico](docs/HISTORY.md)** - Funcionalidades do histórico
+- **🎯 [Nova Interface](docs/INTERFACE.md)** - Interface focada em partidas ganhas
+- **🏓 [Todas as Funcionalidades](docs/FEATURES.md)** - Lista completa
+
+📖 **[Índice Completo da Documentação](docs/README.md)**

@@ -1,4 +1,4 @@
-# 🔥 Como Configurar Firebase para PingPong Counter
+# 🔥 Configuração Firebase
 
 ## 📋 **Pré-requisitos:**
 1. Conta Google
@@ -44,7 +44,7 @@ const firebaseConfig = {
 };
 ```
 
-### 5. **Configurar Regras de Segurança (Opcional)**
+### 5. **Configurar Regras de Segurança (Obrigatório)**
 Para permitir leitura/escrita pública (apenas para teste):
 1. No Firestore, vá para **"Regras"**
 2. Substitua por:
@@ -98,9 +98,9 @@ Se Firebase não funcionar:
 
 ## 🆘 **Problemas Comuns:**
 
-1. **"Firebase not configured"**: Verifica se copiaste as configurações
-2. **"Permission denied"**: Configura regras do Firestore
-3. **"Network error"**: Verifica internet e configurações
+1. **"Permission denied"**: Configura regras do Firestore (passo 5)
+2. **"Network error"**: Verifica internet e configurações
+3. **"NOT_FOUND"**: Verifica se o projeto existe e está configurado
 
 ---
 
