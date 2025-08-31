@@ -4,8 +4,8 @@
 export const CONFIG = {
   // Nomes predefinidos dos jogadores
   DEFAULT_PLAYER_NAMES: {
-    left: "Huguinho",
-    right: "Rui"
+    left: "Player 1",
+    right: "Player 2"
   },
 
   // Textos da interface
