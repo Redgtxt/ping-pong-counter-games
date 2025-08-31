@@ -13,6 +13,13 @@ O sistema de histórico permite visualizar todas as partidas jogadas, organizada
 - ✅ Estatísticas em tempo real
 - ✅ Contagem de vitórias por jogador
 
+### **🗑️ Gestão do Histórico** (**Novo!**)
+- ✅ **Apagar Individual**: Botão 🗑️ em cada partida
+- ✅ **Confirmação**: Pergunta antes de apagar
+- ✅ **Limpar Tudo**: Botão no cabeçalho para apagar tudo
+- ✅ **Estatísticas Dinâmicas**: Atualizadas automaticamente
+- ✅ **Sincronização**: Mantém Firebase e localStorage alinhados
+
 ### **🎮 Registo de Partidas**
 - ✅ **Automático**: Partidas registadas no "Reset"
 - ✅ **Auto-complete**: Sistema aos 11 pontos (configurável)
@@ -47,9 +54,18 @@ O sistema de histórico permite visualizar todas as partidas jogadas, organizada
 3. Confirme para registar e começar nova
 4. ✅ Partida registada com vencedor
 
-### **3. Limpar Histórico**
+### **3. Gestão do Histórico**
+
+#### **Apagar Partida Individual** (**Novo!**)
+1. Abra o histórico 
+2. Encontre a partida específica
+3. Clique no ícone **🗑️** da partida
+4. Confirme para apagar apenas essa partida
+5. ✅ Estatísticas atualizadas automaticamente
+
+#### **Limpar Todo o Histórico**
 1. Abra o histórico
-2. Clique no ícone **🗑️** (lixo)
+2. Clique no ícone **🗑️** (lixo) do cabeçalho
 3. Confirme para apagar tudo
 4. ⚠️ **Ação irreversível**
 

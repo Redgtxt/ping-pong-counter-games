@@ -151,6 +151,30 @@ const matchSummary = `${leftName} ${leftMatches} partidas vs ${rightName} ${righ
 
 ---
 
-## 🎉 **Resultado**
+## � **Elementos de Interface Recentes** (v1.2)
+
+### **🌙 Header com Dark Mode**
+- **Localização**: Canto superior direito
+- **Botão**: Toggle 🌙/☀️ para alternar tema
+- **Comportamento**: Clique alterna entre claro/escuro
+- **Visual**: Botão redondo com hover animation
+- **Persistente**: Preferência guardada entre sessões
+
+### **📊 Gestão de Histórico**
+- **Botão Principal**: "📊 Histórico" no header
+- **Ações por Partida**: Botão 🗑️ individual discreto
+- **Confirmações**: Diálogos antes de apagar
+- **Layout**: Design não-intrusivo mas acessível
+- **Feedback**: Estatísticas atualizadas em tempo real
+
+### **🔧 Melhorias de UX**
+- **Botões Responsivos**: Touch-friendly em mobile
+- **Animações Suaves**: Transições CSS otimizadas  
+- **Contraste Adequado**: WCAG compliant em ambos os temas
+- **Hierarquia Visual**: Elementos organizados por importância
+
+---
+
+## �🎉 **Resultado**
 
 A nova interface transforma a experiência de **contador simples** para **sistema competitivo envolvente**, mantendo toda a funcionalidade técnica mas adicionando diversão e foco no que realmente importa! 🏆💪

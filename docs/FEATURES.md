@@ -4,9 +4,23 @@
 
 ### **🎮 Contador de Partidas**
 - ✅ **Nomes Editáveis**: Clique nos nomes para personalizar (máx 18 chars)
-- ✅ **Incremento Rápido**: Botão + para adicionar pontos
+- ✅ **Increment## 🏆 **Resumo Executivo**
+
+✅ **18+ funcionalidades principais implementadas**  
+✅ **PWA 100% funcional e instalável**  
+✅ **Firebase integrado com fallback offline**  
+✅ **Interface moderna focada na competição**  
+✅ **Sistema de histórico completo com gestão inteligente**  
+🌙 **Dark Mode toggle independente**  
+🗑️ **Gestão granular do histórico**  
+🔧 **Bug fixes críticos implementados**  
+✅ **Cross-platform (iOS/Android/Desktop)**  
+✅ **Performance otimizada**  
+✅ **Pronto para produção**  
+
+**Uma aplicação completa e profissional para contar partidas de ping-pong!** 🏓🎉Botão + para adicionar pontos
 - ✅ **Edição Direta**: Clique no número para alterar score
-- ✅ **Undo/Desfazer**: Reverte última alteração
+- ✅ **Undo/Desfazer**: Reverte última alteração (🔧 **Bug corrigido!**)
 - ✅ **Reset Inteligente**: Zera e regista partida completa
 
 ### **🏆 Interface Renovada**  
@@ -14,6 +28,7 @@
 - ✅ **Mensagens Provocativas**: 15+ frases dinâmicas baseadas no líder
 - ✅ **Estatísticas Principais**: "Huguinho 5 partidas vs Rui 2" em destaque
 - ✅ **Score Atual**: Partida em curso em seção dedicada
+- 🌙 **Dark Mode Toggle**: Botão para alternar entre modo claro/escuro
 
 ### **📊 Sistema de Histórico**
 - ✅ **Visualização Completa**: Todas as partidas organizadas por data
@@ -21,6 +36,7 @@
 - ✅ **Detalhes Completos**: Data, hora, resultado e vencedor
 - ✅ **Interface Otimizada**: Design responsivo com scroll suave
 - ✅ **Gestão de Dados**: Limpar histórico com confirmação
+- 🗑️ **Apagar Individual**: Remover partidas específicas do histórico
 
 ### **🔄 Auto-Complete Inteligente**
 - ✅ **11 Pontos Configurable**: Partida completa automaticamente
@@ -77,10 +93,12 @@
 - ✅ **Orientação**: Funciona portrait/landscape
 
 ### **🌙 Dark/Light Mode**
-- ✅ **Automático**: Segue preferência do sistema
-- ✅ **CSS Variables**: Transições suaves
-- ✅ **Acessibilidade**: Contraste adequado
-- ✅ **PWA Consistent**: Mantém tema no app
+- 🌙 **Toggle Manual**: Botão 🌙/☀️ no header para alternar temas
+- ✅ **Preferência Persistente**: Escolha guardada no localStorage
+- ✅ **Independente do Sistema**: Controlo total pelo utilizador
+- ✅ **CSS Variables**: Transições suaves entre temas
+- ✅ **Acessibilidade**: Contraste adequado em ambos os modos
+- ✅ **PWA Consistent**: Mantém tema no app instalado
 
 ### **♿ Acessibilidade**
 - ✅ **Keyboard Navigation**: Navegação completa por teclado
@@ -167,7 +185,31 @@ clearTestData();   // Limpar todos os dados
 
 ---
 
-## 🏆 **Resumo Executivo**
+## � **Funcionalidades Recentes** (v1.2)
+
+### **🌙 Dark Mode Toggle**
+- **Como usar**: Clique no botão 🌙/☀️ no canto superior direito
+- **Persistente**: A preferência fica guardada entre sessões
+- **Independente**: Não muda automaticamente com o sistema
+- **Implementação**: Usa `data-theme="dark"` no HTML root
+- **Performance**: CSS otimizado com variáveis para transições suaves
+
+### **🗑️ Gestão Inteligente do Histórico**
+- **Apagar Individual**: Botão 🗑️ em cada partida específica
+- **Confirmação**: Pergunta antes de apagar para evitar acidentes
+- **Estatísticas Dinâmicas**: Totais atualizados automaticamente
+- **Layout Otimizado**: Botão discreto mas acessível
+- **Preserva Dados**: Firebase e localStorage sincronizados
+
+### **🔧 Bug Fixes Importantes**
+- **Undo Corrigido**: Jogador direito agora funciona corretamente
+- **História Precisa**: Ordem correta independente de quem marca
+- **Implementação**: Fix na ordem dos parâmetros `pushHistory(leftScore, rightScore)`
+- **Testado**: Validado em ambos os jogadores e cenários
+
+---
+
+## �🏆 **Resumo Executivo**
 
 ✅ **16 funcionalidades principais implementadas**  
 ✅ **PWA 100% funcional e instalável**  

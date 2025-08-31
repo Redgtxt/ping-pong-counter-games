@@ -8,17 +8,18 @@ Uma aplicação web simples e bonita para contar partidas de Ping-Pong entre doi
 - ✅ **Botão de incremento (+)**: Adiciona vitórias rapidamente
 - ✅ **Alteração rápida de score**: Clique no número para alterar diretamente
 - ✅ **Frase dinâmica**: Mostra quem tem mais vitórias com uma mensagem personalizada
-- ✅ **Undo/Desfazer**: Reverte a última alteração de score
+- ✅ **Undo/Desfazer**: Reverte a última alteração de score (🔧 **Bug corrigido!**)
 - ✅ **Reset**: Zera o placar (com confirmação)
 - ✅ **Partilhar**: Partilha o resultado via sistema nativo ou copia para área de transferência
 - ✅ **LocalStorage**: Os dados ficam guardados localmente no navegador
 - ✅ **PWA**: Pode ser instalado no telemóvel como aplicação nativa
 - ✅ **Design responsivo**: Funciona bem em dispositivos móveis e desktop
-- ✅ **Tema escuro/claro**: Adapta-se automaticamente às preferências do sistema
+- 🌙 **Dark Mode Toggle**: Botão para alternar entre modo claro e escuro (independente do sistema)
 - 🔥 **Firebase Integration**: Sincronização em tempo real e links partilháveis
 - 🔗 **Links Partilháveis**: Cada jogo tem um ID único para partilhar
 - 🔄 **Sincronização em Tempo Real**: Mudanças aparecem instantaneamente em todos os dispositivos
 - 📊 **Sistema de Histórico**: Registo completo de todas as partidas jogadas
+- 🗑️ **Apagar Partidas**: Possibilidade de apagar jogos individuais do histórico
 - 🏆 **Auto-complete**: Partidas completam automaticamente aos 11 pontos
 - 📱 **Interface Histórico**: Visualização organizada por data com estatísticas
 - 🎯 **Contador de Partidas**: Foco nas partidas ganhas em vez de pontos momentâneos
@@ -131,20 +132,28 @@ pingpong-counter/
 3. **Desfazer**: Botão "Undo" para reverter a última alteração
 4. **Zerar**: Botão "Reset" para voltar ao 0-0 (pede confirmação)
 5. **Partilhar**: Botão "Partilhar" no topo para enviar o resultado
-6. **Ver Histórico**: Botão "📊 Histórico" para ver todas as partidas jogadas
-7. **Auto-complete**: Partidas completam automaticamente aos 11 pontos (configurável)
+6. **Dark Mode**: Botão 🌙/☀️ no header para alternar entre modo claro e escuro
+7. **Ver Histórico**: Botão "📊 Histórico" para ver todas as partidas jogadas
+8. **Apagar Partidas**: Use o botão 🗑️ em cada partida do histórico para apagar individualmente
+9. **Auto-complete**: Partidas completam automaticamente aos 11 pontos (configurável)
 
 ### 🏆 **Interface Principal**
 - **Contador de Partidas**: Mostra quantas partidas cada jogador ganhou (ex: "Huguinho 5 partidas vs Rui 2")
 - **Mensagens Provocativas**: Frases dinâmicas para provocar e motivar baseadas no líder
 - **Partida Atual**: Score da partida em curso mostrado em seção dedicada
 
+### 🌙 **Dark Mode**
+- **Toggle Manual**: Use o botão 🌙/☀️ para alternar entre temas
+- **Preferência Persistente**: A escolha fica guardada no navegador
+- **Independente do Sistema**: Não muda automaticamente com o sistema operativo
+
 ### 📊 **Sistema de Histórico**
 - **Ver partidas**: Clique em "📊 Histórico" para ver todas as partidas
 - **Agrupadas por data**: Partidas organizadas por dia
 - **Estatísticas**: Total de jogos e vitórias por jogador
 - **Detalhes**: Hora, resultado e vencedor de cada partida
-- **Limpar**: Use o ícone 🗑️ para limpar todo o histórico
+- **Apagar Individual**: Clique no ícone 🗑️ em cada partida para a apagar (pede confirmação)
+- **Limpar Tudo**: Use o ícone 🗑️ do cabeçalho para limpar todo o histórico
 
 ## 📄 Licença
 
