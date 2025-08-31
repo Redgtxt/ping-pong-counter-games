@@ -20,8 +20,19 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
+/* Dark mode override - sempre aplicado quando data-theme="dark" */
+:root[data-theme="dark"] {
+  --bg-primary: #171717;
+  --bg-secondary: #262626;
+  --bg-tertiary: #404040;
+  --text-primary: #fafafa;
+  --text-secondary: #a3a3a3;
+  --border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Fallback para sistemas que preferem dark mode */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg-primary: #171717;
     --bg-secondary: #262626;
     --bg-tertiary: #404040;
@@ -364,14 +375,12 @@ body {
   transform: scale(0.95);
 }
 
-@media (prefers-color-scheme: dark) {
-  .increment-btn {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  }
-  
-  .increment-btn:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-  }
+:root[data-theme="dark"] .increment-btn {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+:root[data-theme="dark"] .increment-btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 640px) {
@@ -392,6 +401,27 @@ body {
   display: flex;
   gap: 0.5rem;
   align-items: center;
+}
+
+.dark-mode-btn {
+  border-radius: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.dark-mode-btn:hover {
+  box-shadow: var(--shadow-md);
+  transform: scale(1.05);
 }
 
 .history-btn {
@@ -490,11 +520,9 @@ body {
   color: #dc2626;
 }
 
-@media (prefers-color-scheme: dark) {
-  .clear-btn {
-    background-color: #450a0a;
-    color: #fca5a5;
-  }
+:root[data-theme="dark"] .clear-btn {
+  background-color: #450a0a;
+  color: #fca5a5;
 }
 
 .empty-history {
@@ -598,10 +626,8 @@ body {
   color: #059669;
 }
 
-@media (prefers-color-scheme: dark) {
-  .match-score .player.winner {
-    color: #34d399;
-  }
+:root[data-theme="dark"] .match-score .player.winner {
+  color: #34d399;
 }
 
 .match-score .vs {
@@ -628,10 +654,38 @@ body {
   color: var(--text-secondary);
 }
 
-@media (prefers-color-scheme: dark) {
-  .match-winner .winner {
-    color: #34d399;
-  }
+.match-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.delete-match-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  opacity: 0.6;
+  transition: all 0.2s ease;
+  border-radius: 0.25rem;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+}
+
+.delete-match-btn:hover {
+  opacity: 1;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
+
+:root[data-theme="dark"] .match-winner .winner {
+  color: #34d399;
 }
 
 @media (max-width: 640px) {

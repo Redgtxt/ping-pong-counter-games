@@ -28,6 +28,14 @@ export default function App() {
   const [isOnline, setIsOnline] = useState(true);
   const [lastSaved, setLastSaved] = useState(null);
   const [showHistory, setShowHistory] = useState(false);
+  const [darkMode, setDarkMode] = useState(() => {
+    // Verificar se há preferência salva ou usar preferência do sistema
+    const saved = localStorage.getItem('darkMode');
+    if (saved !== null) {
+      return JSON.parse(saved);
+    }
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  });
 
   const STORAGE_KEY = CONFIG.TECHNICAL.storageKey;
 
@@ -49,6 +57,12 @@ export default function App() {
       }
     }
   }, []);
+
+  // Aplicar dark mode
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', darkMode ? 'dark' : 'light');
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+  }, [darkMode]);
 
   // Guardar no localStorage (backup)
   useEffect(() => {
@@ -233,6 +247,14 @@ export default function App() {
     setRightWins(0);
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const deleteMatchFromHistory = (matchId) => {
+    setMatchHistory(prev => prev.filter(match => match.id !== matchId));
+  };
+
   const summary = useMemo(
     () => `${leftName} ${leftWins} – ${rightName} ${rightWins}`,
     [leftName, rightName, leftWins, rightWins]
@@ -354,6 +376,13 @@ export default function App() {
           </div>
           <div className="header-buttons">
             <button
+              onClick={toggleDarkMode}
+              className="dark-mode-btn"
+              title={darkMode ? "Modo claro" : "Modo escuro"}
+            >
+              {darkMode ? "☀️" : "🌙"}
+            </button>
+            <button
               onClick={() => setShowHistory(!showHistory)}
               className="history-btn"
               title="Ver histórico de partidas"
@@ -379,6 +408,7 @@ export default function App() {
                   setMatchHistory([]);
                 }
               }}
+              onDeleteMatch={deleteMatchFromHistory}
             />
           ) : (
             <>
@@ -449,7 +479,12 @@ function PlayerCard({ name, setName, score, setScore, otherScore, pushHistory, a
   const handleChangeScore = (e) => {
     const val = parseInt(e.target.value, 10);
     if (!isNaN(val)) {
-      pushHistory(score, otherScore);
+      // Corrigir ordem do histórico baseado no alinhamento
+      if (align === 'left') {
+        pushHistory(score, otherScore);
+      } else {
+        pushHistory(otherScore, score);
+      }
       setScore(val);
       
       // Verificar se deve completar a partida
@@ -461,7 +496,12 @@ function PlayerCard({ name, setName, score, setScore, otherScore, pushHistory, a
   };
 
   const handleIncrement = () => {
-    pushHistory(score, otherScore);
+    // Corrigir ordem do histórico baseado no alinhamento
+    if (align === 'left') {
+      pushHistory(score, otherScore);
+    } else {
+      pushHistory(otherScore, score);
+    }
     const newScore = score + 1;
     setScore(newScore);
     
@@ -499,7 +539,7 @@ function PlayerCard({ name, setName, score, setScore, otherScore, pushHistory, a
   );
 }
 
-function MatchHistory({ matches, onClose, onClearHistory }) {
+function MatchHistory({ matches, onClose, onClearHistory, onDeleteMatch }) {
   // Agrupar partidas por data
   const groupedMatches = useMemo(() => {
     const groups = {};
@@ -599,12 +639,25 @@ function MatchHistory({ matches, onClose, onClearHistory }) {
                           })}
                         </div>
                       </div>
-                      <div className="match-winner">
-                        {match.winner === 'Empate' ? (
-                          <span className="tie">🤝 Empate</span>
-                        ) : (
-                          <span className="winner">🏆 {match.winner}</span>
-                        )}
+                      <div className="match-actions">
+                        <div className="match-winner">
+                          {match.winner === 'Empate' ? (
+                            <span className="tie">🤝 Empate</span>
+                          ) : (
+                            <span className="winner">🏆 {match.winner}</span>
+                          )}
+                        </div>
+                        <button
+                          onClick={() => {
+                            if (confirm(`Tens a certeza que queres apagar esta partida?`)) {
+                              onDeleteMatch(match.id);
+                            }
+                          }}
+                          className="delete-match-btn"
+                          title="Apagar partida"
+                        >
+                          🗑️
+                        </button>
                       </div>
                     </div>
                   ))}
