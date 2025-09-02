@@ -89,8 +89,8 @@ npm run lint
 
 ```javascript
 // Nomes predefinidos
-const [leftName, setLeftName] = useState("Huguinho");
-const [rightName, setRightName] = useState("Rui");
+const [leftName, setLeftName] = useState("Player 1");
+const [rightName, setRightName] = useState("Player 2");
 
 // Mensagem de empate
 if (leftWins === rightWins) return "Está empatado!";
